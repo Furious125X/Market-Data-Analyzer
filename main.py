@@ -1,6 +1,15 @@
-from analysis import load_prices, calculate_daily_returns
+from analysis import load_prices, calculate_daily_returns, calculate_moving_average, calculate_average_daily_return, calculate_volatility, best_and_worst_days, win_loss_analysis
 
 prices = load_prices("data/prices.csv")
 daily_returns = calculate_daily_returns(prices)
-print(f'Calculated {len(daily_returns)} daily returns.')
-print(daily_returns[:5])  # Print the first 5 entries to verify
+average_daily_return = calculate_average_daily_return(daily_returns)
+moving_averages = calculate_moving_average(prices, window_size=20)
+volatility = calculate_volatility(daily_returns)
+best_day, worst_day = best_and_worst_days(daily_returns)
+win_loss = win_loss_analysis(prices, daily_returns)
+win_loss = win_loss_analysis(prices, daily_returns)
+print(f'Average Daily Return: {average_daily_return}')
+print(f'Volatility: {volatility}')
+print(f'Best Day: {best_day}')
+print(f'Worst Day: {worst_day}')
+print(f'Win/Loss Analysis: {win_loss}')
