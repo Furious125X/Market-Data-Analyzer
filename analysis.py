@@ -88,6 +88,36 @@ def win_loss_analysis(prices, daily_returns):
         "win_loss_ratio": win_loss_ratio
     }
 
+def plot_prices_with_moving_average(prices, moving_averages):
+    import matplotlib.pyplot as plt
+
+    dates = [price["date"] for price in prices]
+    closes = [price["close"] for price in prices]
+    ma_values = [ma["moving_average"] for ma in moving_averages]
+
+    plt.figure(figsize=(12, 6))
+    plt.plot(dates, closes, label='Closing Prices', color='blue')
+    plt.plot(dates, ma_values, label='Moving Average', color='orange')
+    plt.xlabel('Date')
+    plt.ylabel('Price')
+    plt.title('Prices with Moving Average')
+    plt.legend()
+    plt.savefig("price_&_ema.png")
+
+
+def plot_daily_returns_histograms(daily_returns):
+    import matplotlib.pyplot as plt
+
+    returns = [ret["daily_return"] for ret in daily_returns]
+
+    plt.figure(figsize=(10, 5))
+    plt.hist(returns, bins=50, color='green', alpha=0.7)
+    plt.xlabel('Daily Return')
+    plt.ylabel('Frequency')
+    plt.title('Histogram of Daily Returns')
+    plt.savefig("daily_returns_histogram.png")
+
+
 #Additional functions can be added here as needed
 
 

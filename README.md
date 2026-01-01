@@ -18,6 +18,10 @@ calculates daily returns, and produces basic performance statistics.
 - `prices.csv` — historical price data
 - `requirements.txt` — environment requirements
 
+## Visualisations
+- Line chart of price over time
+- Histogram of daily returns
+
 ## How to Run
 
 ```bash
