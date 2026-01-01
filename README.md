@@ -22,6 +22,11 @@ calculates daily returns, and produces basic performance statistics.
 - Line chart of price over time
 - Histogram of daily returns
 
+## Outputs
+- `price.png` — price over time
+- `returns_histogram.png` — daily return distribution
+
+
 ## How to Run
 
 ```bash

@@ -103,7 +103,7 @@ def plot_prices_with_moving_average(prices, moving_averages):
     plt.title('Prices with Moving Average')
     plt.legend()
     plt.savefig("price_&_ema.png")
-
+    plt.close()
 
 def plot_daily_returns_histograms(daily_returns):
     import matplotlib.pyplot as plt
@@ -116,6 +116,7 @@ def plot_daily_returns_histograms(daily_returns):
     plt.ylabel('Frequency')
     plt.title('Histogram of Daily Returns')
     plt.savefig("daily_returns_histogram.png")
+    plt.close()
 
 
 #Additional functions can be added here as needed
